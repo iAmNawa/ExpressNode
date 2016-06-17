@@ -1,4 +1,5 @@
 const http = require('http')
+const port = 8080
 
 var username= 'paul',
  password = 'paul',
@@ -24,7 +25,8 @@ http.createServer(function (req, res) {
 
   authenticate(res)
 
-}).listen(8080)
+}).listen(port)
+console.log('the server is running on port', port)
 
 function authenticate(res) {
   res.writeHead(401,
