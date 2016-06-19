@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "browserify": "",
+    "express": "^4.14.0",
+    "mustache": "^2.2.1"
+  }
+}
