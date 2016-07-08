@@ -7,7 +7,11 @@ module.exports = {
     loaders: [
       {
         exclude: /(node_modules|app-server.js)/,
-        loader: 'babel'
+        loader: 'babel',
+        query:
+        {
+          presets: ['react']
+        }
       }
     ]
   }
