@@ -3,7 +3,6 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose =require('mongoose');
 
-var database;
 var Message = mongoose.model('Message', {
   msg: String
 })
@@ -26,10 +25,16 @@ app.post('/api/message', function(req,res){
     res.status(200);
 })
 
+function GetMessages() {
+  Message.find({}).exec(function(err, result) {
+    console.log(result);
+  })
+}
+
 mongoose.connect("mongodb://localhost:27017/test", function(err,db) {
   if (!err) {
     console.log("connected to mongo");
-    database = db;
+    GetMessages();
   }
 })
 
