@@ -1,5 +1,5 @@
-const h = require('hyperscript');
-
+const h = require('hyperscript')
+const http = require('http')
 
 var indexHtml = h('html', { lang: 'en'}, [
   h('head', [
@@ -10,6 +10,10 @@ var indexHtml = h('html', { lang: 'en'}, [
       h('h1', 'Hello World')
     ])
   ])
-]);
+])
 
-console.log(indexHtml.outerHTML);
+http.createServer(function(req, res) {
+  res.writeHead(200, {'content-type': 'text/html'});
+  res.end(indexHtml.outerHTML)
+}).listen(3000)
+console.log('running on 3000')
