@@ -1,13 +1,14 @@
 const h = require('hyperscript')
 const http = require('http')
+const title = 'My first hyperscript document'
 
 var indexHtml = h('html', { lang: 'en'}, [
   h('head', [
-    h('title', 'Hyperscript test')
+    h('title', title)
   ]),
   h('body', [
     h('header', [
-      h('h1', 'Hello World')
+      h('h1', title)
     ])
   ])
 ])
