@@ -2,15 +2,20 @@ const h = require('hyperscript')
 const http = require('http')
 const title = 'My first hyperscript document'
 
+var li = function(item) {
+  return h('li', item)
+}
+
 var indexHtml = h('html', { lang: 'en'}, [
   h('head', [
     h('title', title),
-    h('style', '.title { color: green;}') 
+    h('style', '.title { color: green;}')
   ]),
   h('body', [
     h('header', [
       h('h1.title', title)
-    ])
+    ]),
+    h('ul', ['one', 'two', 'three'].map(li))
   ])
 ])
 
