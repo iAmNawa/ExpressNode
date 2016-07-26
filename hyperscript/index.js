@@ -4,11 +4,12 @@ const title = 'My first hyperscript document'
 
 var indexHtml = h('html', { lang: 'en'}, [
   h('head', [
-    h('title', title)
+    h('title', title),
+    h('style', '.title { color: green;}') 
   ]),
   h('body', [
     h('header', [
-      h('h1', title)
+      h('h1.title', title)
     ])
   ])
 ])
